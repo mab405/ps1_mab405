@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find stdr_launchers)/launch/server_with_map_and_gui_plus_robot.launch" />
+	<arg name="node_start_delay" default="1.0" />
+	<node name="open_loop_commander_node" pkg="my_stdr_controller" type="open_loop_commander_node" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen" />  
+</launch>
